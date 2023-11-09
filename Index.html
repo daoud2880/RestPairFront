@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="">
+    <!-- https://www.bootstrapcdn.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="getAll" class="btn btn-primary">Get all Music records</button>
+        <ul id="musicRecordlist" v-if="musicRecords.length">
+            <li v-for="music in musicRecords">
+                {{music.title}}: {{music.artist}}: {{ music.release}}: {{music.genre}}
+            </li>
+        </ul>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
