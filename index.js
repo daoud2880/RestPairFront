@@ -23,6 +23,10 @@ Vue.createApp({
         getAll(){
             this.helperGetAndShow(baseUri)
         },
+        getAll(filter){
+            const uri = baseUri + "?title" + encodeURIComponent(title)
+            this.helperGetAndShow(uri)
+        },
         async helperGetAndShow(uri) {
             try {
                 const response = await axios.get(uri)
