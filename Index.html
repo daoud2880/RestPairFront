@@ -22,6 +22,13 @@
             </li>
         </ul>
 
+        <input v-model="addData.title" placeholder="title" type="text"/>
+        <input v-model="addData.artist" placeholder="artist" type="text"/>
+        <input v-model="addData.release" placeholder="release" type="number"/>
+        <input v-model="addData.genre" placeholder="genre" type="text"/>
+        <button v-on:click="AddMusicRecord()" class="btn btn-primary">Add Music Record</button>
+        <div>{{addMessage}}</div>
+
     </div>
     <script src="index.js"></script>
 </body>

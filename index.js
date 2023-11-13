@@ -6,7 +6,9 @@ Vue.createApp({
             musicRecords: [],
             filterToGetBy:"",
             name: null,
+            addData:{title:"",artist:"",release:null ,genre:""},
             message: null,
+            addMessage:"",
             title:null,
             artist:null,
             release:null,
@@ -38,6 +40,17 @@ Vue.createApp({
                 alert(ex.message)
             }
         },
+        async AddMusicRecord(){
+            try{
+                response = await axios.post(baseUri,this.addData)
+                this.addMessage = "response" + response.status + " " + response.statusText
+                this.getAll()
+            }
+            catch(ex){
+                alert(ex.message)
+            }
+
+        }
 
     }
 }).mount("#app")
