@@ -4,6 +4,7 @@ Vue.createApp({
     data() {
         return {
             musicRecords: [],
+            filterToGetBy:"",
             name: null,
             message: null,
             title:null,
@@ -23,14 +24,16 @@ Vue.createApp({
         getAll(){
             this.helperGetAndShow(baseUri)
         },
-        getAll(filter){
-            const uri = baseUri + "?title" + encodeURIComponent(title)
+        getAllByFilter(filterToGetBy){
+            const uri = baseUri + "?filter=" + encodeURIComponent(filterToGetBy)
+            console.log(uri)
             this.helperGetAndShow(uri)
         },
         async helperGetAndShow(uri) {
             try {
                 const response = await axios.get(uri)
                 this.musicRecords = await response.data
+                console.log(this.musicRecords)
             } catch (ex) {
                 alert(ex.message)
             }

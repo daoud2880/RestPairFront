@@ -12,8 +12,10 @@
 </head>
 <body>
     <div id="app">
-        <input v-model="getAll(filter)" placeholder="filter" type="text" v-on:keyup.enter="getAll(filter)"
-        <button v-on:click="getAll" class="btn btn-primary">Get all Music records</button>
+        <input v-model="filterToGetBy" placeholder="filter" type="text" v-on:keyup.enter="getAllByFilter(filterToGetBy)">
+
+        <button v-on:click="getAllByFilter(filterToGetBy)" class="btn btn-primary">Get all Music records</button>
+        
         <ul id="musicRecordlist" v-if="musicRecords.length">
             <li v-for="music in musicRecords">
                 {{music.title}}: {{music.artist}}: {{ music.release}}: {{music.genre}}
