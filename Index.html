@@ -29,6 +29,18 @@
         <button v-on:click="AddMusicRecord()" class="btn btn-primary">Add Music Record</button>
         <div>{{addMessage}}</div>
 
+        <input v-model="titleToBeDeleted" placeholder="Title" type="text"/>
+        <button v-on:click="DeleteMusicRecord(titleToBeDeleted)" class="btn btn-primary">Delete Music Record</button>
+        <div>{{deleteMessage}}</div>
+
+        <input v-model="titleToBeUpdated" placeholder="TitleToGetBy" type="text"/>
+        <input v-model="updateData.title" placeholder="title" type="text"/>
+        <input v-model="updateData.artist" placeholder="artist" type="text"/>
+        <input v-model="updateData.release" placeholder="release" type="number"/>
+        <input v-model="updateData.genre" placeholder="genre" type="text"/>
+        <button v-on:click="UpdateMusicRecord()" class="btn btn-primary">Update Music Record</button>
+        <div>{{updateMessage}}</div>
+
     </div>
     <script src="index.js"></script>
 </body>
