@@ -20,6 +20,7 @@ Vue.createApp({
             updateMessage:"",
             updateData:{title:"",artist:"",release:null ,genre:""},
             tracks:[],
+            selected:null,
 
         }
     },
@@ -29,6 +30,19 @@ Vue.createApp({
                 this.message = "Hello " + name
             else
                 this.message = "Hello No Name"
+        },
+        async Clicked(recordName) {
+            const uri = baseUri + "/recordName?recordName=" + encodeURIComponent(recordName)
+            const response = axios.get(uri)
+            this.tracks = await response.data
+            element = this.tracks.find(element => element.title == recordName)
+            if(element == null)
+            {
+                this.selected = null
+            } else {
+                this.selected = Object.assign({}, element)
+            }
+            
         },
         getAll(){
             this.helperGetAndShow(baseUri)
