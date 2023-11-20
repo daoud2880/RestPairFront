@@ -17,7 +17,8 @@
         
         <ul id="musicRecordlist" v-if="musicRecords.length">
             <li v-for="music in musicRecords">
-                {{music.title}}: {{music.artist}}: {{ music.release}}: {{music.genre}}: {{music.listOfTracks}}
+                <span v-on:click="Clicked(music.recordName)">{{music.title}}:</span>
+                 {{music.artist}}: {{ music.release}}: {{music.genre}}: {{music.listOfTracks}}
             </li>
         </ul>        
 

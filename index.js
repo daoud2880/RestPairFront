@@ -32,16 +32,12 @@ Vue.createApp({
                 this.message = "Hello No Name"
         },
         async Clicked(recordName) {
+            console.log(this.recordName)
             const uri = baseUri + "/recordName?recordName=" + encodeURIComponent(recordName)
+            console.log(uri)
             const response = axios.get(uri)
             this.tracks = await response.data
-            element = this.tracks.find(element => element.title == recordName)
-            if(element == null)
-            {
-                this.selected = null
-            } else {
-                this.selected = Object.assign({}, element)
-            }
+            console.log(this.tracks)
             
         },
         getAll(){
