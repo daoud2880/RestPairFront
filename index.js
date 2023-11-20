@@ -5,6 +5,7 @@ Vue.createApp({
         return {
             musicRecords: [],
             filterToGetBy:"",
+            titleToGetBy:"",
             name: null,
             addData:{title:"",artist:"",release:null ,genre:""},
             message: null,
@@ -18,6 +19,7 @@ Vue.createApp({
             titleToBeUpdated:"",
             updateMessage:"",
             updateData:{title:"",artist:"",release:null ,genre:""},
+            tracks:[],
 
         }
     },

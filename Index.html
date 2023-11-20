@@ -13,14 +13,13 @@
 <body>
     <div id="app">
         <input v-model="filterToGetBy" placeholder="filter" type="text" v-on:keyup.enter="getAllByFilter(filterToGetBy)">
-
         <button v-on:click="getAllByFilter(filterToGetBy)" class="btn btn-primary">Get all Music records</button>
         
         <ul id="musicRecordlist" v-if="musicRecords.length">
             <li v-for="music in musicRecords">
-                {{music.title}}: {{music.artist}}: {{ music.release}}: {{music.genre}}
+                {{music.title}}: {{music.artist}}: {{ music.release}}: {{music.genre}}: {{music.listOfTracks}}
             </li>
-        </ul>
+        </ul>        
 
         <input v-model="addData.title" placeholder="title" type="text"/>
         <input v-model="addData.artist" placeholder="artist" type="text"/>
